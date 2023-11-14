@@ -1,5 +1,5 @@
 import HyperExpress from "hyper-express";  
-import { AddUser, ListUser } from "./app/User";
+import { AddUser, ListUser, ShowUserByEmail } from "./app/User";
 
 const route = new HyperExpress.Server();
 
@@ -7,6 +7,8 @@ const port = 4000;
 
 // Create GET route to serve 'Hello World'
 route.get("/", ListUser);
+
+route.get("/user", ShowUserByEmail);
 
 route.post("/user", AddUser);
 
